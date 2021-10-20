@@ -11285,10 +11285,11 @@ body {
   background-image: linear-gradient(to right, #282828 0%, #f5fafa 100%);
 }
 
-.navbar .navbar-brand {
+.navbar .navbar-brand,
+.navbar a.nav-link {
   color: #fff !important;
 }
 
-.navbar a.nav-link {
-  color: #1a1e21;
+label {
+  color: #FFF;
 }

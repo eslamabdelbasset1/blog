@@ -24,9 +24,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return 'create';
+        return view('posts.create');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -34,9 +33,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        return 'Hello World';
     }
 
     /**

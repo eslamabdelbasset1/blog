@@ -5,9 +5,12 @@ body{
 }
 
 
-.navbar .navbar-brand{
+.navbar .navbar-brand,
+.navbar a.nav-link {
     color: #fff !important;
 }
-.navbar a.nav-link {
-    color: #1a1e21;
+
+label
+{
+    color: #FFF;
 }

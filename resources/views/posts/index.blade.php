@@ -10,7 +10,7 @@
             <div class="pull-left text-center">
             </div>
             <div class="pull-right text-center">
-                <a class="btn btn-success" href=""> Create Post</a>
+                <a class="btn btn-success" href="{{route('posts.create')}}"> Create Post</a>
             </div><br>
         </div>
     </div>
@@ -30,7 +30,7 @@
             <td>20/8/2021</td>
             <td>
                 <form action="" method="POST">
-                    <a class="btn btn-info" href="">Show</a>
+                    <a class="btn btn-info" href="{{route('posts.show', ['post' => 1])}}">Show</a>
                     <a class="btn btn-primary" href="">Edit</a>
                     @csrf
                     @method('DELETE')
