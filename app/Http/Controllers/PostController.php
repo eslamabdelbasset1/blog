@@ -27,6 +27,7 @@ class PostController extends Controller
         return 'create';
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
