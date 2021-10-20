@@ -44,9 +44,9 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($post)
+    public function show($postId)
     {
-        return $post;
+        return view('posts.show');
     }
 
     /**
