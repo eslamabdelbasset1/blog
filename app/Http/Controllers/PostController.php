@@ -35,6 +35,11 @@ class PostController extends Controller
      */
     public function store()
     {
+        $requestDB = request()->all();
+        post::create([
+           'title' => $requestDB['title'],
+           'description' => $requestDB['description']
+        ]);
         return 'Hello';
     }
 
