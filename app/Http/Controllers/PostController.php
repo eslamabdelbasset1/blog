@@ -14,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts.index');
+        $postCollection = Post::all();
+        return view('posts.index', ['postCollection' => $postCollection]);
     }
 
     /**
@@ -40,7 +41,7 @@ class PostController extends Controller
            'title' => $requestDB['title'],
            'description' => $requestDB['description']
         ]);
-        return 'Hello';
+        return redirect()->route('posts.index');
     }
 
     /**

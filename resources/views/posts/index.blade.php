@@ -17,26 +17,34 @@
     {{--        <div class="alert alert-success">--}}
     {{--            <span>message</span>--}}
     {{--        </div>--}}
-    <table class="table table-bordered w-75 m-auto">
-        <tr>
-            <th>No</th>
-            <th>PostedBy</th>
-            <th>Created at</th>
-            <th>Action</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Islam</td>
-            <td>20/8/2021</td>
-            <td>
-                <form action="" method="POST">
-                    <a class="btn btn-info" href="{{route('posts.show', ['post' => 1])}}">Show</a>
-                    <a class="btn btn-primary" href="">Edit</a>
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" onclick="return confirm('Do you really want to delete student!')" class="btn btn-danger">Delete</button>
-                </form></td>
-        </tr>
+    <table class="table table-bordered w-75 m-auto text-center bg-white">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Title</th>
+                <th>PostedBy</th>
+                <th>Created at</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+       <tbody>
+           @foreach ($postCollection as $post)
+               <tr>
+                   <td>{{$post->id}}</td>
+                   <td>{{$post->title}}</td>
+                   <td>{{$post->description}}</td>
+                   <td>{{$post->created_at}}</td>
+                   <td>
+                       <form action="" method="POST">
+                           <a class="btn btn-info" href="{{route('posts.show', $post->id)}}">Show</a>
+                           <a class="btn btn-primary" href="">Edit</a>
+                           @csrf
+                           @method('DELETE')
+                           <button type="submit" onclick="return confirm('Do you really want to delete student!')" class="btn btn-danger">Delete</button>
+                       </form></td>
+               </tr>
+           @endforeach
+       </tbody>
     </table>
 </div>
 @endsection
