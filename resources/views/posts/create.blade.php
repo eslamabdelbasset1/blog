@@ -8,15 +8,15 @@
             @csrf
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Post Creator</label>
-                <select class="form-select" aria-label="Default select example">
+                <select name="post_creator" class="form-select" aria-label="Default select example">
                     <option selected>Islam</option>
                     <option value="1">Islam</option>
                     <option value="2">Two</option>
