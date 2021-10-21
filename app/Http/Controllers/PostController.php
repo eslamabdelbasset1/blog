@@ -35,7 +35,7 @@ class PostController extends Controller
      */
     public function store()
     {
-        return 'Hello World';
+        return 'Hello';
     }
 
     /**
