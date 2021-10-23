@@ -43,7 +43,10 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|min:3|max:255',
             'description' => 'required|min:3',
-            'post_creator' => 'required|min:1',
+            'post_creator' => ['required','exists:users,id'],
+        ],
+        [
+            'title.required' => 'Title name field is required.',
         ]);
         post::create([
 //           'title' => $request['title'],
