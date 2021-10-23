@@ -22,7 +22,6 @@
                     @endforeach
                 </select>
             </div>
-
             <button type="submit" class="btn btn-success"> Add Post </button>
         </form>
     </div>
