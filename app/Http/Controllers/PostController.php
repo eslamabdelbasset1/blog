@@ -37,13 +37,13 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store( Request $request)
     {
-        $requestDB = request()->all();
+//        $requestDB = request()->all();
         post::create([
-           'title' => $requestDB['title'],
-           'description' => $requestDB['description'],
-            'user_id' => $requestDB['post_creator'],
+           'title' => $request['title'],
+           'description' => $request['description'],
+            'user_id' => $request['post_creator'],
         ]);
         return redirect()->route('posts.index');
     }
