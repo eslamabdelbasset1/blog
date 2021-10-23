@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\storePostRequest;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -37,17 +38,17 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( Request $request)
+    public function store( storePostRequest $request)
     {
 //        $requestDB = request()->all();
-        $request->validate([
-            'title' => 'required|min:3|max:255',
-            'description' => 'required|min:3',
-            'post_creator' => ['required','exists:users,id'],
-        ],
-        [
-            'title.required' => 'Title name field is required.',
-        ]);
+//        $request->validate([
+//            'title' => 'required|min:3|max:255',
+//            'description' => 'required|min:3',
+//            'post_creator' => ['required','exists:users,id'],
+//        ],
+//        [
+//            'title.required' => 'Title name field is required.',
+//        ]);
         post::create([
 //           'title' => $request['title'],
 //           'description' => $request['description'],
