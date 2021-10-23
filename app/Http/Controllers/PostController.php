@@ -41,9 +41,9 @@ class PostController extends Controller
     {
 //        $requestDB = request()->all();
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'post_creator' => 'required',
+            'title' => 'required|min:3|max:255',
+            'description' => 'required|min:3',
+            'post_creator' => 'required|min:1',
         ]);
         post::create([
 //           'title' => $request['title'],
