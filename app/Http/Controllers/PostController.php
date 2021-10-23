@@ -41,9 +41,12 @@ class PostController extends Controller
     {
 //        $requestDB = request()->all();
         post::create([
-           'title' => $request['title'],
-           'description' => $request['description'],
-            'user_id' => $request['post_creator'],
+//           'title' => $request['title'],
+//           'description' => $request['description'],
+//            'user_id' => $request['post_creator'],
+            'title' => $request->title,
+            'description' => $request->description,
+            'user_id' => $request->post_creator,
         ]);
         return redirect()->route('posts.index');
     }
