@@ -32,7 +32,8 @@
                <tr>
                    <td>{{$post->id}}</td>
                    <td>{{$post->title}}</td>
-                   <td>{{$post->description}}</td>
+                   @dd($post->user)
+                   <td>{{$post->user_id}}</td>
                    <td>{{$post->created_at}}</td>
                    <td>
                        <form action="" method="POST">
