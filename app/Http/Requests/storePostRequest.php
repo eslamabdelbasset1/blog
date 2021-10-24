@@ -29,4 +29,11 @@ class storePostRequest extends FormRequest
             'post_creator' => ['required','exists:users,id'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'A title name is required',
+        ];
+    }
 }
