@@ -1,17 +1,12 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 body{
-    background: linear-gradient(to right, #282828 0%, #f5fafa 100%);
-
-}
-
-
-.navbar .navbar-brand,
-.navbar a.nav-link {
-    color: #fff !important;
-}
-
-label
-{
-    color: #FFF;
+    background-color: #1a202c;
 }
