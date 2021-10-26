@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,18 @@ Route::group(['middleware' => ['auth']],function(){
     Route::get('posts/{post}',[\App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
     Route::post('posts/',[\App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 });
+
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('github')->redirect();
+});
+
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('github')->user();
+    dd($user);
+
+    // $user->token
+});
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
