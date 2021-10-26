@@ -68,7 +68,10 @@ class PostController extends Controller
      */
     public function show($postId)
     {
-        return view('posts.show');
+        $posts = post::findOrFail($postId);
+        return view('posts.show', [
+            'posts'=> $posts
+        ]);
     }
 
     /**
@@ -79,7 +82,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $cats = cat::findOrFail($post);
+        return view('posts.edit', [
+            'cats'=> $cats
+        ]);
     }
 
     /**
@@ -89,10 +95,19 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
-    {
-        //
-    }
+     public function update(Post $post, Request $request)
+     {
+
+           $request->validate([
+               'name' => 'required |string | max:100',
+               'desc' => 'required |string'
+           ]);
+           post::findOrFail($post)->update([
+               'name' => $request->name,
+               'desc' => $request->desc,
+           ]);
+           return redirect(url('/posts'));
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -102,6 +117,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $posts = post::findOrFail($post)->delete;
+        return redirect(url('/posts'));
     }
+
+
 }
