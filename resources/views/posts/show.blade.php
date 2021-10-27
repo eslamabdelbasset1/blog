@@ -19,8 +19,8 @@
                 Post creator Information
             </div>
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">Posted By: {{$posts->user ? $posts->user->name : 'Not Found'}}</h5>
+                <p class="card-text">Email: {{$posts->user ? $posts->user->email : 'Not Found'}}</p>
             </div>
         </div>
     </div>

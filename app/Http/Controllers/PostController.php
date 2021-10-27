@@ -82,9 +82,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $cats = cat::findOrFail($post);
+        $posts = post::findOrFail($post);
         return view('posts.edit', [
-            'cats'=> $cats
+            'posts' => $posts
         ]);
     }
 

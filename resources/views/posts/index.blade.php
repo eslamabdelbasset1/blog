@@ -37,11 +37,15 @@
                    <td>
                        <form action="" method="POST">
                            <a class="btn btn-info" href="{{route('posts.show', $post->id)}}">Show</a>
-                           <a class="btn btn-primary" href="">Edit</a>
+                           <a class="btn btn-primary" href="{{route('posts.edit', $post->id)}}">Edit</a>
                            @csrf
                            @method('DELETE')
-                           <button type="submit" onclick="return confirm('Do you really want to delete student!')" class="btn btn-danger">Delete</button>
-                       </form></td>
+                           <button type="submit" onclick="
+                           return confirm('Do you really want to delete student!')" class="btn btn-danger">
+                               Delete
+                           </button>
+                       </form>
+                   </td>
                </tr>
            @endforeach
        </tbody>
