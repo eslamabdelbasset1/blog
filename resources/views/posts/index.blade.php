@@ -34,14 +34,21 @@
                    <td>{{$post->title}}</td>
                    <td>{{$post->user ? $post->user->name : 'Not Found'}}</td>
                    <td>{{$post->created_at}}</td>
-                   <td>
+                   <td class="d-flex justify-content-between">
                        <form action="" method="POST">
                            <a class="btn btn-info" href="{{route('posts.show', $post->id)}}">Show</a>
                            <a class="btn btn-primary" href="{{route('posts.edit', $post->id)}}">Edit</a>
                            @csrf
+{{--                           @method('DELETE')--}}
+{{--                           <button type="submit" onclick="--}}
+{{--                           return confirm('Do you really want to delete student!')" class="btn btn-danger">--}}
+{{--                               Delete--}}
+{{--                           </button>--}}
+                       </form>
+                       <form action="{{route('posts->delete', $post->id)}}" method="POST">
+                           @csrf
                            @method('DELETE')
-                           <button type="submit" onclick="
-                           return confirm('Do you really want to delete student!')" class="btn btn-danger">
+                           <button onclick="return confirm('Do you really want to delete student!')" class="btn btn-danger">
                                Delete
                            </button>
                        </form>
