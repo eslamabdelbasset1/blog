@@ -20,7 +20,7 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
                 <input type="text" name="title" class="form-control" id="exampleFormControlInput1"
-                       placeholder="Title">
+                       placeholder="Title"> 
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
